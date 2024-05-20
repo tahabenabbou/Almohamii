@@ -16,7 +16,8 @@ from dotenv import load_dotenv
 import os
 
 # Load environment variables
-load_dotenv()
+#load_dotenv()
+
 
 # Initialize the OpenAI embeddings
 openAI_embeddings = OpenAIEmbeddings()
@@ -32,12 +33,12 @@ def get_vectorstore_from_doc(url):
     vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
     return vector_store
 
-vector_store = get_vectorstore_from_doc('docs/3_TradeRecord_ar-MA.pdf')
+vector_store = get_vectorstore_from_doc('3_TradeRecord_ar-MA.pdf')
 
 # Function to get the conversational retrieval chain
-def get_context_retriever_chain(vector_store):
-    llm = ChatOpenAI(temperature=0.7, model_name="gpt-4", api_key=openai_api_key)
-    retriever = vector_store.as_retriever()
+def get_context_retriever_chain(vector):
+    llm = ChatOpenAI(temperature=0.7, model_name="gpt-4o")
+    retriever = vector.as_retriever()
     memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     
     conversation_chain = ConversationalRetrievalChain.from_llm(
