@@ -33,7 +33,7 @@ def get_vectorstore_from_doc(url):
     vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
     return vector_store
 
-vector_store = get_vectorstore_from_doc('3_TradeRecord_ar-MA.pdf')
+vector_store = get_vectorstore_from_doc('docs/3_TradeRecord_ar-MA.pdf')
 
 # Function to get the conversational retrieval chain
 def get_context_retriever_chain(vector):
