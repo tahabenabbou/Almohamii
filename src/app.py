@@ -24,7 +24,7 @@ load_dotenv()
 openAI_embeddings = OpenAIEmbeddings()
 
 # Function to get vectorstore from a document
-def get_vectorstore_from_doc(url):
+def get_vectorstore_from_doc(pdf):
     # loader = PyPDFLoader(url)
     # document = loader.load()
     text=""
