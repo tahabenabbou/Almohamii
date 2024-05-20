@@ -1,6 +1,6 @@
 import streamlit as st
-from gtts import gTTS
-from IPython.display import Audio
+# from gtts import gTTS
+# from IPython.display import Audio
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
@@ -32,7 +32,7 @@ def get_vectorstore_from_doc(url):
     vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
     return vector_store
 
-vector_store = get_vectorstore_from_doc('./3_TradeRecord_ar-MA.pdf')
+vector_store = get_vectorstore_from_doc('docs/3_TradeRecord_ar-MA.pdf')
 
 # Function to get the conversational retrieval chain
 def get_context_retriever_chain(vector_store):
@@ -49,10 +49,10 @@ def get_context_retriever_chain(vector_store):
     return conversation_chain
 
 # Function to convert text to speech
-def text_to_speech(text, lang='ar', tld='com'):
-    tts = gTTS(text=text, lang=lang, slow=False, tld=tld)
-    tts.save("response.mp3")
-    return Audio("response.mp3", autoplay=True)
+# def text_to_speech(text, lang='ar', tld='com'):
+#     tts = gTTS(text=text, lang=lang, slow=False, tld=tld)
+#     tts.save("response.mp3")
+#     return Audio("response.mp3", autoplay=True)
 
 # Streamlit interface
 st.title("Conversational AI with Streamlit")
@@ -75,7 +75,7 @@ if st.button("Get Answer"):
     if query:
         answer = get_answer(query)
         st.write("Answer:", answer)
-        text_to_speech(answer)
-        st.audio("response.mp3")
+        # text_to_speech(answer)
+        # st.audio("response.mp3")
     else:
         st.write("Please enter a question.")
