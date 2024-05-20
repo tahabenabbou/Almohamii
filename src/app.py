@@ -2,19 +2,18 @@ import streamlit as st
 # from gtts import gTTS
 # from IPython.display import Audio
 from langchain.chains import ConversationalRetrievalChain
+import streamlit as st
+# from gtts import gTTS
+# from IPython.display import Audio
+from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
-from langchain import OpenAI, VectorDBQA
-from langchain.document_loaders import DirectoryLoader
-from langchain_community.document_loaders import UnstructuredPDFLoader
-from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
 import os
-
 # Load environment variables
 load_dotenv()
 
