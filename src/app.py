@@ -38,7 +38,9 @@ def get_vectorstore_from_doc(pdf):
     # document_chunks = text_splitter.split_documents(document)
     document_chunks = text_splitter.split_text(text)
     
-    vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
+    # vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
+    vector_store = Chroma(embedding_function=openAI_embeddings)
+    vector_store.add_texts(document_chunks)
     return vector_store
 
 vector_store = get_vectorstore_from_doc('docs/3_TradeRecord_ar-MA.pdf')
