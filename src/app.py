@@ -66,8 +66,8 @@ def get_context_retriever_chain(vector):
 #     return Audio("response.mp3", autoplay=True)
 
 # Streamlit interface
-st.title("Conversational AI with Streamlit")
-st.write("Ask a question to the AI and get a spoken response:")
+st.title("Welcome To Smartify Smart Law Assistant bot")
+st.write("Please Enter Your Question (Arabic input) ")
 
 query = st.text_input("Enter your question:")
 
