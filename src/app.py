@@ -10,6 +10,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.text_splitter import CharacterTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.memory import ConversationBufferMemory
 from dotenv import load_dotenv
@@ -23,11 +24,18 @@ openAI_embeddings = OpenAIEmbeddings()
 
 # Function to get vectorstore from a document
 def get_vectorstore_from_doc(url):
-    loader = PyPDFLoader(url)
-    document = loader.load()
+    # loader = PyPDFLoader(url)
+    # document = loader.load()
+    text=""
+    pdf_reader= PdfReader(pdf)
+    for page in pdf_reader.pages:
+        text+= page.extract_text()
     
-    text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=250)
-    document_chunks = text_splitter.split_documents(document)
+    # text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=250)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=250)
+    chunks = text_splitter.split_text(text)
+    # document_chunks = text_splitter.split_documents(document)
+    document_chunks = text_splitter.split_text(text)
     
     vector_store = Chroma.from_documents(document_chunks, openAI_embeddings)
     return vector_store
