@@ -1,0 +1,7 @@
+langchain
+gtts
+IPython
+streamlit
+chromadb
+openai
+langchain_community
