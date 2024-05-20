@@ -13,10 +13,15 @@ from langchain_community.document_loaders import UnstructuredPDFLoader
 from langchain_community.document_loaders import AzureAIDocumentIntelligenceLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.memory import ConversationBufferMemory
+from dotenv import load_dotenv
+
 
 import os
 
 # Set the OpenAI API key
+
+load_dotenv()
+
 
 # Initialize the components
 llm = ChatOpenAI(temperature=0.7, model_name="gpt-4o") 
@@ -37,7 +42,7 @@ embeddings = OpenAIEmbeddings()
 #vectordb = Chroma(embedding_function=embeddings)
 
 persist_directory = '/'
-openAI_embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
+openAI_embeddings = OpenAIEmbeddings()
 vectordb = Chroma(persist_directory=persist_directory, embedding_function=openAI_embeddings)
 
 # Create the conversational chain
