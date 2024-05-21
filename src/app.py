@@ -66,7 +66,9 @@ def get_context_retriever_chain(vector):
 #     return Audio("response.mp3", autoplay=True)
 
 # Streamlit interface
+st.set_page_config(page_title="Smartify Law Assistant Bot", page_icon="⚖️", layout="wide")
 st.title("Welcome To Smartify Smart Law Assistant bot")
+st.image("docs/smartify_bot.PNG", use_column_width=False)
 st.write("Please Enter Your Question (Arabic input) ")
 
 query = st.text_input("Enter your question:")
