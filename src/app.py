@@ -71,7 +71,7 @@ st.set_page_config(page_title="Smartify Law Assistant Bot", page_icon="⚖️", 
 st.title("Almohami: Your Intelligent Legal Companion is Here for your assistance.")
 
 # st.write("This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!")
-st.markdown("**This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!** - ** !! هذه نسخة تجريبية من مساعدنا، يرجى تركيز سؤالك على القانون التجاري للمغرب 🇲🇦 من فضلك **")
+st.write("**This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!** - ** !! هذه نسخة تجريبية من مساعدنا، يرجى تركيز سؤالك على القانون التجاري للمغرب 🇲🇦 من فضلك **")
 
 # st.write("Please Enter Your Question (Arabic input) ")
 
