@@ -70,11 +70,13 @@ st.set_page_config(page_title="Smartify Law Assistant Bot", page_icon="⚖️", 
 #st.title("Welcome To Smartify Smart Law Assistant bot")
 st.title("Almohami: Your Intelligent Legal Companion is Here for your assistance.")
 
-st.write("This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!")
-st.write("Please Enter Your Question (Arabic input) ")
+# st.write("This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!")
+st.markdown("**This is a beta version of our Assistant, focus your question on Commercial Code of 🇲🇦 please !!** - ** !! هذه نسخة تجريبية من مساعدنا، يرجى تركيز سؤالك على القانون التجاري للمغرب 🇲🇦 من فضلك **")
+
+# st.write("Please Enter Your Question (Arabic input) ")
 
 st.sidebar.image("docs/smartify_bot.PNG", use_column_width = True)
-query = st.text_input("Enter your question:")
+query = st.text_input("Enter Your Question: :** - ** :الرجاء إدخال سؤالك **")
 
 # Initialize vector store and conversational chain
 # You need to replace 'your_document_url.pdf' with the actual URL or path of your document
