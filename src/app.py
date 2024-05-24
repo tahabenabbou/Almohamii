@@ -21,7 +21,7 @@ load_dotenv()
 
 
 # Initialize the OpenAI embeddings
-openAI_embeddings = OpenAIEmbeddings()
+openAI_embeddings = OpenAIEmbeddings(model = "text-embedding-3-small")
 
 # Function to get vectorstore from a document
 def get_vectorstore_from_doc(pdf):
