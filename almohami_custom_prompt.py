@@ -13,6 +13,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.memory import ConversationBufferMemory
+from langchain.prompts import PromptTemplate
 from PyPDF2 import PdfReader
 from dotenv import load_dotenv
 import os
